@@ -1,0 +1,4 @@
+projectId: <gcp-project-id>
+region: us-central1
+imageUrl: <gs://bucket-name-abc/testname.jpeg>
+promptText: "<describe the picture?>"
