@@ -16,12 +16,20 @@ def arrange_args(args):
     if args.file:
         logging.info("Config file is provided. Reading it now.")
         data = yaml.safe_load(args.file)
-        objArgs.project_id  = data["projectId"]
-        objArgs.region      = data["region"]
-        objArgs.prompt_text = data["promptText"]
-        objArgs.image_url   = data["imageUrl"]
+        objArgs.project_id                = data["projectId"]
+        objArgs.region                    = data["region"]
+        objArgs.prompt_text               = data["promptText"]
+        objArgs.image_url                 = data["imageUrl"]
+        objArgs.max_output_tokens         = data["contentGenerationConfig"]["max_output_tokens"]
+        objArgs.temperature               = data["contentGenerationConfig"]["temperature"]
+        objArgs.top_p                     = data["contentGenerationConfig"]["top_p"]
+        objArgs.top_k                     = data["contentGenerationConfig"]["top_k"]
+        objArgs.hateSpeechThreshold       = data["contentSafetyConfig"]["hateSpeechThreshold"]
+        objArgs.dangerousContentThreshold = data["contentSafetyConfig"]["dangerousContentThreshold"]
+        objArgs.harasssmentThreshold      = data["contentSafetyConfig"]["harasssmentThreshold"]
+        objArgs.sexuallyExplicitThreshold = data["contentSafetyConfig"]["sexuallyExplicitThreshold"]
 
-    # Overriding config properties wtih command line properties
+    # Overriding config properties with command line properties
     if args.project_id:
         objArgs.project_id  = args.project_id
     if args.prompt_text:
