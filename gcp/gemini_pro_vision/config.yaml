@@ -1,7 +1,7 @@
-projectId: impactful-mode-343117
+projectId: <gcp-project-id>
 region: us-central1
-imageUrl: gs://gcp-ai-gemini-pro-vision-demo/number-of-passengers/people-in-car-1.jpg
-promptText: "describe the picture?"
+imageUrl: <gs://bucket-name-abc/testname.jpeg>
+promptText: "<describe the picture?>"
 contentGenerationConfig:
   max_output_tokens: 2048   # Range 1-2048
   temperature: 0.4          # Range 0-1 
@@ -12,7 +12,3 @@ contentSafetyConfig:                    # HARM_BLOCK_THRESHOLD_UNSPECIFIED: 0
   dangerousContentThreshold: 3          # BLOCK_MEDIUM_AND_ABOVE (Default): 2
   harasssmentThreshold: 3               # BLOCK_ONLY_HIGH: 3
   sexuallyExplicitThreshold: 3          # BLOCK_NONE: 4
-
-  
-  
-  
