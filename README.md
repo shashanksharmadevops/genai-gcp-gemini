@@ -37,6 +37,12 @@ Optional Args:
    promptText: "describe the picture?"
    ```
 
+### There are two ways this application can be executed
+1. Execution in local/VM i.e NO container
+2. Execution in container
+
+## Execution in local/VM i.e NO container
+
 Help:
 ```
 python3 main.py --help
@@ -45,4 +51,22 @@ python3 main.py --help
 Run:
 ```
 python3 main.py --file ./config.yaml
+```
+## Execution in container
+
+Change directory:
+```
+cd gcp/gemini_pro_vision/
+```
+Docker build:
+```
+docker build . -t gcp-gemini-pro-vision
+```
+
+Run the container: Below command has two volumes mapped for app config file and GCP auth. 
+Setup google auth using https://cloud.google.com/docs/authentication/provide-credentials-adc#wlif-key
+This is only to run locally or on-prem. Not a recommended method because user have to maintain security of key. 
+Follow the document(link) above for workload identity and other methods.
+```
+docker run --rm -v <path-to-config.yaml>:/app/config.yaml -v <path-to-gcp-auth.json>:/config/gcp-auth.json gcp-gemini-pro-vision -f config.yaml
 ```

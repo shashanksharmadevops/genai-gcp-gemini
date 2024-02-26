@@ -1,7 +1,7 @@
 projectId: <gcp-project-id>
 region: us-central1
-imageUrl: <gs://bucket-name-abc/testname.jpeg>
-promptText: "<describe the picture?>"
+imageUrl: gs://some-gcp-bucket/some-path/some-image.jpeg
+promptText: "describe the picture?"
 contentGenerationConfig:
   max_output_tokens: 2048   # Range 1-2048
   temperature: 0.4          # Range 0-1 
