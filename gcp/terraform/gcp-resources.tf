@@ -1,6 +1,5 @@
 resource "random_pet" "gcp-bucket-name" {
   keepers = {
-    # Generate a new pet name each time we switch to a new AMI id
     project_id = var.gcp-project-id
   }
   length    = 2 # number of words
