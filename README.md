@@ -6,20 +6,34 @@ Python module to interact with GCP GenAI gemini model to inspect images
 ### Pre-requisites:
 1. [Google Cloud Platform Account](https://cloud.google.com/free?utm_source=google&utm_medium=cpc&utm_campaign=na-none-all-en-dr-sitelink-all-all-trial-e-gcp-1707554&utm_content=text-ad-none-any-DEV_c-CRE_665735485400-ADGP_Hybrid+%7C+BKWS+-+MIX+%7C+Txt_General+GCP-KWID_43700078963885939-kwd-527294293847-userloc_1002287&utm_term=KW_gcp%20account-ST_gcp+account-NET_g-&gad_source=1&gclid=Cj0KCQiAnrOtBhDIARIsAFsSe53c4p6LFWyfeUGJw5vbcN2WnMzu2NQ42saXL03trw_X3RoSuLQDT-AaAqitEALw_wcB&gclsrc=aw.ds)
 2. [Create GCP project](https://developers.google.com/workspace/guides/create-project)
-3. [Enable required GCP APIs](https://cloud.google.com/vertex-ai/docs/featurestore/setup#:~:text=In%20the%20Google%20Cloud%20console,create%20a%20Google%20Cloud%20project.&text=Make%20sure%20that%20billing%20is,Enable%20the%20Vertex%20AI%20API.)
-4. [Create a GCP Bucket](https://cloud.google.com/storage/docs/creating-buckets)
-5. [Upload image file(s) into bucket](https://cloud.google.com/storage/docs/uploading-objects)
-6. [Setup auth](https://cloud.google.com/docs/authentication/provide-credentials-adc#local-dev)
+3. [Setup GCP auth](https://cloud.google.com/docs/authentication/provide-credentials-adc#local-dev)
 
 Clone the respository and cd
 ```
 git clone https://github.com/shashanksharmadevops/genai-gcp-gemini.git
 ```
-```
-cd gcp/gemini_pro_vision/
-```
+### This app has 2 modules
+1. Terraform - To build GCP resources and enable GCP APIs
+2. Python App - To interact with GCP gemini-pro-vision model
 
-### Arguments:
+### Run Terraform
+   1. ```
+      cd gcp/terraform/
+      ```
+   2. Update variables.tf
+
+   3. ```
+      terraform plan -out tf.plan
+      terraform apply tf.plan
+      ```
+   4. [Upload image file(s) into GCP bucket](https://cloud.google.com/storage/docs/uploading-objects)
+
+### Run Application
+   ```
+   cd gcp/gemini_pro_vision/
+   ```
+
+### Application Arguments:
 
 Required Args:
 1. --project_id  : GCP project id
