@@ -29,7 +29,7 @@ Optional Args:
 Clone the respository and cd
 ```
 git clone https://github.com/shashanksharmadevops/genai-gcp-gemini.git \
-cd genai-gcp-gemini/
+&& cd genai-gcp-gemini/
 ```
 ### This app has 2 modules
 1. Terraform - To build GCP resources and enable GCP APIs
@@ -84,8 +84,10 @@ cd genai-gcp-gemini/
       ```
       docker build . -t gcp-gemini-pro-vision
       ```
+   
+   2. Update config.yaml
 
-   2. Run the container: Below command has two volumes mapped for app config file and GCP auth. 
+   3. Run the container: Below command has two volumes mapped for app config file and GCP auth. 
       Setup google auth using https://cloud.google.com/docs/authentication/provide-credentials-adc#wlif-key
       This is only to run locally or on-prem. Not a recommended method because user have to maintain security of key. 
       Follow the document(link) above for workload identity and other methods.
